@@ -174,20 +174,11 @@ public class RS3MusicPlugin extends Plugin {
     }
 
     private void fadeCurrentTrack() {
-        if (trackPlayer.getVolume() == 0) {
-            client.setMusicVolume(0);
-            previousTrack = nextTrack;
-            currentPlayerState = PLAYING_TRACK_STATE;
-        } else {
-            trackPlayer.setVolume(trackPlayer.getVolume() - 14);
-            if (trackPlayer.getVolume() < 14) {
-                trackPlayer.setVolume(0);
-                trackPlayer.stop();
-                previousTrack = nextTrack;
-                currentPlayerState = PLAYING_TRACK_STATE;
-            }
-        }
-
+        client.setMusicVolume(0);
+        trackPlayer.setVolume(0);
+        trackPlayer.stop();
+        previousTrack = nextTrack;
+        currentPlayerState = PLAYING_TRACK_STATE;
     }
 
     private String getUpdatedListFromRepo() {
