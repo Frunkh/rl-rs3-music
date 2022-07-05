@@ -1,7 +1,7 @@
 # RS3 Music
 
 
-This plugin plays a remix of a track that is currently playing in game. 
+This plugin plays the RS3 variant of a track that is currently playing in game. 
 
 ## Using the RS3 Music plugin
 
