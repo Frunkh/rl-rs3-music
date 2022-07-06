@@ -13,10 +13,10 @@ def runeLiteVersion = '1.8.25'
 
 dependencies {
 	implementation files('libs/jaco-mp3-player-0.9.5.jar')
-	compile 'org.jsoup:jsoup:1.15.2'
-	compileOnly group: 'net.runelite', name:'client', version: runeLiteVersion
+	implementation 'org.jsoup:jsoup:1.15.2'
+	implementation group: 'net.runelite', name:'client', version: runeLiteVersion
 
-	compileOnly 'org.projectlombok:lombok:1.18.4'
+	implementation 'org.projectlombok:lombok:1.18.4'
 	annotationProcessor 'org.projectlombok:lombok:1.18.4'
 
 	testImplementation 'junit:junit:4.12'
@@ -27,7 +27,7 @@ dependencies {
 }
 
 group = 'com.music.RS3Music'
-version = '1.1.3'
+version = '1.0'
 sourceCompatibility = '1.8'
 
 tasks.withType(JavaCompile) {
