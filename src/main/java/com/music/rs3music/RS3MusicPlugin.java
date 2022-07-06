@@ -259,12 +259,14 @@ public class RS3MusicPlugin extends Plugin {
                 }
             });
 
+            if(config.log()) {
+                client.addChatMessage(ChatMessageType.GAMEMESSAGE,
+                        "",
+                        "RS3 Music Notice: " + track.name,
+                        null);
+            }
             handlePlayThread.start();
 
-            client.addChatMessage(ChatMessageType.GAMEMESSAGE,
-                    "",
-                    "RS3 Music Notice: " + track.name,
-                    null);
 
             initializeTrack = false;
         } else {
@@ -422,7 +424,7 @@ public class RS3MusicPlugin extends Plugin {
                 }
             } else {
                 trackPlayer.setVolume(0);
-                client.setMusicVolume(0);
+                client.setMusicVolume(config.volume());
             }
         }
 

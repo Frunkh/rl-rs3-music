@@ -102,6 +102,19 @@ class RS3MusicPanel extends PluginPanel implements ChangeListener, ActionListene
         togglePanel.add(muteLabel);
         togglePanel.add(muteCheckBox);
 
+        // Mute
+        JLabel logMusicChange = new JLabel();
+        logMusicChange.setText("Log music change:");
+        logMusicChange.setForeground(Color.WHITE);
+        JCheckBox logCheckBox = new JCheckBox();
+        logCheckBox.setSelected(RS3MusicPlugin.getMusicConfig().log());
+        logCheckBox.setForeground(Color.WHITE);
+        logCheckBox.setName("log");
+        logCheckBox.addActionListener((ActionListener) this);
+        togglePanel.add(new JSeparator());
+        togglePanel.add(logMusicChange);
+        togglePanel.add(logCheckBox);
+
         volumePanel.add(togglePanel);
 
         add(volumePanel, BorderLayout.CENTER);
@@ -125,6 +138,11 @@ class RS3MusicPanel extends PluginPanel implements ChangeListener, ActionListene
         {
             // log.info("Value of mute is " + source.isSelected());
             RS3MusicPlugin.getMusicConfig().setMute(source.isSelected());
+        }
+        if (source.getName() == "log")
+        {
+            // log.info("Value of mute is " + source.isSelected());
+            RS3MusicPlugin.getMusicConfig().setLog(source.isSelected());
         }
     }
 }

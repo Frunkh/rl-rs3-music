@@ -20,7 +20,7 @@ The Mute checkbox will mute all music in game.
 
 ## Known issues
 
-- Music resets upon login only once
+- Music change sometimes logs twice
 
 ## Credits
 

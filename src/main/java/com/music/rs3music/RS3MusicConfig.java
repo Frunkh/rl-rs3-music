@@ -45,12 +45,31 @@ public interface RS3MusicConfig extends Config
 	}
 
 	@ConfigItem(
+			keyName = "log",
+			name = "Log",
+			description = "Decides whether you want to log the music change.",
+			position = 0
+	)
+	default boolean log()
+	{
+		return true;
+	}
+
+	@ConfigItem(
 			keyName = "mute",
 			name = "Mute",
 			description = "Mutes everything.",
 			hidden = true
 	)
 	void setMute(boolean value);
+
+	@ConfigItem(
+			keyName = "log",
+			name = "Log",
+			description = "Decides whether you want to log the music change.",
+			hidden = true
+	)
+	void setLog(boolean value);
 
 	@Range(
 			max = 100
