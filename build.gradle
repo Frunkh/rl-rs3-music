@@ -13,7 +13,7 @@ def runeLiteVersion = '1.8.25'
 
 dependencies {
 	implementation files('libs/jaco-mp3-player-0.9.5.jar')
-	implementation 'org.jsoup:jsoup:1.15.2'
+
 	implementation group: 'net.runelite', name:'client', version: runeLiteVersion
 
 	implementation 'org.projectlombok:lombok:1.18.4'

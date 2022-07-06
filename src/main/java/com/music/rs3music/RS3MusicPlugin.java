@@ -56,10 +56,6 @@ import java.util.stream.Collectors;
 import jaco.mp3.player.MP3Player;
 import net.runelite.client.util.ImageUtil;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-
 @Slf4j
 @PluginDescriptor(
         name = "RS3 Music",
@@ -150,27 +146,6 @@ public class RS3MusicPlugin extends Plugin {
         }
     }
 
-    private String getTrackLink(String anonFilesLink) {
-        String link = "";
-
-        try {
-            // Only if in whitelist
-            Document doc = Jsoup.connect(anonFilesLink).get();
-
-            Element downloadUrl = doc.getElementById("download-url");
-
-            link = downloadUrl.attr("href");
-
-            link = link.replace(" ", "%20");
-
-            // log.info("Link: " + link);
-
-        } catch (Exception e) {
-            // log.error(e.getMessage()); TODO: Still log but prevent spamming the file
-        }
-
-        return link;
-    }
 
     private void changeCurrentTrack() {
         client.setMusicVolume(0);
@@ -335,7 +310,7 @@ public class RS3MusicPlugin extends Plugin {
                     handlePlayThread = new Thread(() -> {
                         try {
                             // Get actual track link
-                            String directLink = getTrackLink(track.link);
+                            String directLink = track.link;
                             trackPlayer.addToPlayList(new URL(directLink));
                             trackPlayer.play();
                         } catch (Exception e) {
