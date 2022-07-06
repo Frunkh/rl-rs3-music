@@ -81,7 +81,7 @@ public class RS3MusicPlugin extends Plugin {
     private OverlayManager overlayManager;
 
     private final static String TRACK_LIST_REPO =
-            "https://rs3.letmewatch.it/";
+            "https://rs3.frunk.ovh/";
 
     private final int FADING_TRACK_STATE = 0;
 
