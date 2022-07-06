@@ -36,7 +36,6 @@ import net.runelite.api.widgets.Widget;
 import net.runelite.api.widgets.WidgetID;
 import net.runelite.api.widgets.WidgetInfo;
 import net.runelite.api.widgets.WidgetType;
-import net.runelite.client.RuneLite;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
 import net.runelite.client.plugins.Plugin;
@@ -173,7 +172,7 @@ public class RS3MusicPlugin extends Plugin {
         return link;
     }
 
-    private void fadeCurrentTrack() {
+    private void changeCurrentTrack() {
         client.setMusicVolume(0);
         trackPlayer.setVolume(0);
         trackPlayer.stop();
@@ -389,7 +388,7 @@ public class RS3MusicPlugin extends Plugin {
 
         try {
             if (changingTracks == true && currentPlayerState == FADING_TRACK_STATE) {
-                    fadeCurrentTrack();
+                    changeCurrentTrack();
             } else {
                 if (initializeTrack == true) {
                     playTrack(currentTrack.getText());
