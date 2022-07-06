@@ -24,7 +24,7 @@ dependencies {
 	testImplementation group: 'net.runelite', name:'jshell', version: runeLiteVersion
 }
 
-group = 'com.music.RS3Music'
+group = 'com.music.rs3music'
 version = '1.0'
 sourceCompatibility = '1.8'
 
