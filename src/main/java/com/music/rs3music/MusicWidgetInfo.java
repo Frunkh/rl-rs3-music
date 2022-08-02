@@ -35,7 +35,7 @@ import net.runelite.api.widgets.WidgetID;
  */
 public enum MusicWidgetInfo
 {
-    MUSIC_CURRENT_TRACK(WidgetID.MUSIC_GROUP_ID, 6); // Not currently included with client api
+    MUSIC_CURRENT_TRACK(WidgetID.MUSIC_GROUP_ID, 8); // Not currently included with client api
 
     private final int groupId;
     private final int childId;

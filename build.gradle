@@ -9,7 +9,7 @@ repositories {
 	mavenCentral()
 }
 
-def runeLiteVersion = '1.8.25'
+def runeLiteVersion = '1.8.29'
 
 dependencies {
 	implementation files('libs/jaco-mp3-player-0.9.5.jar')
